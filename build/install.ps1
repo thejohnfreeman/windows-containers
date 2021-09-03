@@ -33,3 +33,6 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 
 scoop install python git
+
+pip install --upgrade pip
+pip install conan ninja
