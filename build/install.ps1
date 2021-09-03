@@ -27,12 +27,12 @@ if ($exitCode -ne 0 -and $exitCode -ne 3010)
     exit $exitCode
 }
 
-rm $installer $channel
+rm $installer, $channel
 
 Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 
-scoop install python git
+scoop install python git --global
 
-pip install --upgrade pip
-pip install conan ninja
+pip install --no-warn-script-location --upgrade pip
+pip install --no-warn-script-location conan ninja
