@@ -36,3 +36,7 @@ scoop install python git --global
 
 pip install --no-warn-script-location --upgrade pip
 pip install --no-warn-script-location conan ninja
+
+# Add an administrator with a password so we can elevate privileges.
+New-LocalUser -Name Administrator -Password $(ConvertTo-SecureString password -AsPlainText -Force)
+Add-LocalGroupMember -Group Administrators -Member Administrator
