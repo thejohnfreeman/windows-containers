@@ -34,9 +34,6 @@ Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.
 
 scoop install python git --global
 
+C:\ProgramData\scoop\apps\python\current\install-pep-514.reg
 pip install --no-warn-script-location --upgrade pip
 pip install --no-warn-script-location conan ninja
-
-# Add an administrator with a password so we can elevate privileges.
-New-LocalUser -Name Administrator -Password $(ConvertTo-SecureString password -AsPlainText -Force)
-Add-LocalGroupMember -Group Administrators -Member Administrator
